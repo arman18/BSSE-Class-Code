@@ -74,7 +74,10 @@ int main(void){
 
     simplex(toTalVar,lenTotVar,basicVar,lenBasVar,arr);
 
-    cout<<arr[0][6]<<endl;
+        for(int i=0; i<4; i++){
+        cout<<basicVar[i]<<" "<<arr[i][6]<<endl;
+
+    }
 
     return 0;
 }
