@@ -81,3 +81,25 @@ int main(void){
 
     return 0;
 }
+
+/*
+here problem is:
+    z = 8x1 + 9x2
+    2x1 + 3x2 <=50
+    2x1 + 6x2 <=80
+    3x1 + 3x2 <=70
+    x1,x2>=0
+
+
+standard form:
+
+    z - 8x1 - 9x2 - 0s1 - 0s2 - 0s3 = 0
+    2x1 + 3x2 + s1 = 50
+    2x1 + 6x2 +   + s2 = 80
+    3x1 + 3x2 +   +   +s3 = 70
+    x1,x2,s1,s2,s3>=0
+
+
+
+
+*/
