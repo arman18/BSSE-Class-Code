@@ -20,7 +20,7 @@ void extractIntegerWords(string str)
     int found; 
     while (iss>>temp) //same as while(!iss.eof())
     { 
-        if (stringstream(temp) >> found) //Checking the given word is integer or not
+        if (stringstream(temp) >> found) //reading return true or false!!
         cout << found << " "; 
         temp = ""; //To save from space at the end of string 
     } 
