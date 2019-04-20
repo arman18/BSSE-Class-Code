@@ -178,7 +178,7 @@ int main(void)
 		s+=ch;
 		if(check(ch)) 
 		{
-			
+		
 			mystruct *node = createNode(ch , 1);
 			if(sb==NULL) sb = node;
 			else
