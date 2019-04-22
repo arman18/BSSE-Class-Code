@@ -1,3 +1,4 @@
+
 #include<iostream>
 using namespace std;
 void simplex(string *totalVar,int lenTotVar,string *basicVar,int lenBasVar,double **arr){
@@ -38,7 +39,7 @@ void simplex(string *totalVar,int lenTotVar,string *basicVar,int lenBasVar,doubl
         //elementary row operation
         double newPivRow,pivElement = arr[pivRow][pivColumn];
         basicVar[pivRow] = totalVar[pivColumn];
-        for(int i=0; i<7; i++){
+        for(int i=0; i<=lenTotVar; i++){
             if(i==pivColumn) continue;
             newPivRow = (0.0+arr[pivRow][i]) / pivElement;
             arr[pivRow][i] = newPivRow;
@@ -69,13 +70,13 @@ int main(void){
     for(int i=0; i<lenBasVar; i++) arr[i] = new double[lenTotVar+1];
 
     double arr2[][7] = {1,-8,-9,0,0,0,0,0,2,3,1,0,0,50,0,2,6,0,1,0,80,0,3,3,0,0,1,70};
-    for(int i=0; i<4; i++)
-        for(int j=0; j<7; j++) arr[i][j] = arr2[i][j];
+    for(int i=0; i<lenBasVar; i++)
+        for(int j=0; j<(lenTotVar+1); j++) arr[i][j] = arr2[i][j];
 
     simplex(toTalVar,lenTotVar,basicVar,lenBasVar,arr);
 
-        for(int i=0; i<4; i++){
-        cout<<basicVar[i]<<" "<<arr[i][6]<<endl;
+        for(int i=0; i<lenBasVar; i++){
+        cout<<basicVar[i]<<" "<<arr[i][lenTotVar]<<endl;
 
     }
 
