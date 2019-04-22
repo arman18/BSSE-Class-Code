@@ -69,7 +69,7 @@ int main(void){
     double **arr = new double*[lenBasVar];
     for(int i=0; i<lenBasVar; i++) arr[i] = new double[lenTotVar+1];
 
-    double arr2[][7] = {1,-8,-9,0,0,0,0,0,2,3,1,0,0,50,0,2,6,0,1,0,80,0,3,3,0,0,1,70};
+    double arr2[lenBasVar][lenTotVar+1] = {1,-8,-9,0,0,0,0,0,2,3,1,0,0,50,0,2,6,0,1,0,80,0,3,3,0,0,1,70};
     for(int i=0; i<lenBasVar; i++)
         for(int j=0; j<(lenTotVar+1); j++) arr[i][j] = arr2[i][j];
 
