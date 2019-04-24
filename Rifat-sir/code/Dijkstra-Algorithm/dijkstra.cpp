@@ -64,6 +64,7 @@ int main(void){
     int sourceNode;
     cin>>sourceNode;
     sourceNode--;
+    finalValue[sourceNode] =0;  //modified herre
     dijkstr(arr,previousNode,finalValue,checkNode,sourceNode,numberOfNode);
     int node,temp;
     cout<<"which node you want to go: ";
