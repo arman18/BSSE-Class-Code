@@ -7,10 +7,9 @@ int cnt = 0;
 int DFS(vvi &G,int *serial,int *low,int root,vector< int > &color,int parent,int numberOfNodes,si &S){
     color[root] = 0;
     serial[root] = cnt++;
-    int temp = 987654,mini = 987654,node=-1,last=0,comOFroot=0;
+    int temp = 987654,mini = 987654,node=-1,comOFroot=0;
     tr(G[root],i){
         if(*i==parent) continue;
-        last = 1;
         if(color[*i]) {
             temp = DFS(G,serial,low,*i,color,root,numberOfNodes,S);
             if(parent==-1) comOFroot++;
@@ -24,7 +23,7 @@ int DFS(vvi &G,int *serial,int *low,int root,vector< int > &color,int parent,int
             for(int i=0; i<numberOfNodes; i++) if(serial[i]==mini) low[root] = i;
     }
     else low[root] = 987654;
-    if(parent!=-1 && serial[parent]<=low[root] && last) S.insert(parent+1);
+    if(parent!=-1 && serial[parent]<=low[root]) S.insert(parent+1);
     if(parent==-1 &&  comOFroot==1) S.erase(serial[root]+1);
     return mini;
 }
