@@ -1,0 +1,7 @@
+1) goto ubuntu terminal
+2) sudo apt install sqlite3
+3) sqlite3 students.db < schema.sql
+4) gcc -o 1 main.c sqlite3.c -lpthread -ldl
+5) ./1
+
+thank you...
