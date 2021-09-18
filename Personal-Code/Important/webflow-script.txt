@@ -1,0 +1,32 @@
+function myScroll(item){
+	if(item=="Size")
+		$('.style-tab.kit-sidebar-tab').find('div').eq(24).find('div').eq(0).css('transform', 'translate3d(0px, -262px, 0px)');
+	else if(item=="Bg")
+		$('.style-tab.kit-sidebar-tab').find('div').eq(24).find('div').eq(0).css('transform', 'translate3d(0px, -846px, 0px)');
+	else if(item=="Tx")
+		$('.style-tab.kit-sidebar-tab').find('div').eq(24).find('div').eq(0).css('transform', 'translate3d(0px, -565px, 0px)');
+	else if(item=="Border")
+		$('.style-tab.kit-sidebar-tab').find('div').eq(24).find('div').eq(0).css('transform', 'translate3d(0px, -980px, 0px)');
+	else if(item=="Pos")
+		$('.style-tab.kit-sidebar-tab').find('div').eq(24).find('div').eq(0).css('transform', 'translate3d(0px, -470px, 0px)');
+	else if(item=="Efft")
+		$('.style-tab.kit-sidebar-tab').find('div').eq(24).find('div').eq(0).css('transform', 'translate3d(0px, -1175px, 0px)');
+	return;
+}
+$("<style>.myrow {position: relative;left:18px;top:5px;z-index: 500000;display: flex;max-width: 206px;justify-content: center;align-items: center;background-color: hsla(0, 0.00%, 0.00%, 0.11);}.itemm {margin-right: 2px;padding-top: 6px;padding-right: 6px;padding-bottom: 6px;padding-left: 6px;border-top-width: 1px;border-top-color: black;border-right-width: 1px;border-right-color: black;border-bottom-width: 1px;border-bottom-color: black;border-left-width: 1px;border-left-color: black;border-top-left-radius: 5px;border-top-right-radius: 5px;border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;background-color: hsla(0, 0.00%, 15.29%, 1.00);color: hsla(0, 0.00%, 70.57%, 1.00);font-size: 14px;line-height: 16px;font-weight: 400;cursor: pointer;}.itemm:hover {opacity: 0.66;}.itemm.active {opacity: 0.66;}</style>").appendTo( "head" )
+let element = '<div class="myrow w-container"><div class="itemm">Size</div><div class="itemm">Bg</div><div class="itemm">Tx</div><div class="itemm">Border</div><div class="itemm">Pos</div><div class="itemm">Efft</div></div>';
+$('.tabs').css('flex-wrap', 'wrap');
+$('.inner').css('top', "68px");
+$('.tabs').append(element);
+$('.itemm').on('click', function() {
+  $('.itemm').removeClass('active');
+  $(this).addClass('active');
+  $('.tab.style-tab').click();
+  let vall = $(this).text();
+  myScroll(vall);
+});
+
+//---------
+// designer-app-react-mount > right-sidebar > inner > tab-pane > style tab > pos: relative > contains transfer info
+// designer-app-react-mount > right-sidebar > tabs > contains myRow
+// to find eq number of expected element first give and attribute id then execute $('.parent'); then find from its array
