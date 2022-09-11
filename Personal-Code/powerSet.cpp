@@ -43,3 +43,13 @@ int main(void)
  }
  
 }
+
+
+/* some fact
+string name="arman";
+cout<<name.find("mm")<<endl; // will be 18446744073709551615
+cout<<(name.find("mm")==-1)<<endl; // will be true
+int a = name.find("mm");
+cout<<a<<endl; // will be -1
+
+*/
